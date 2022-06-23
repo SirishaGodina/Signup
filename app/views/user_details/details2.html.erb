@@ -1,0 +1,37 @@
+<div class="container h-100">
+<div class="row h-100 justify-content-center align-items-center">
+<div class="col-10 col-md-8 col-lg-6">
+<h2> Create Account Form-2</h2>
+<% if(@user_details!= nil) %>
+<% if @user_details.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user_details.errors.count, "error") %> prohibited this user_detail from being saved:</h2>
+
+    <ul>
+      <% @user_details.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<% end %>
+<%=form_tag '/user_details/create', method: :post do%>
+ 
+ <div>
+  <%= label_tag :bank_account_no%>
+  <%= text_field_tag :bank_account_no%>
+ </div>
+ <div>
+  <%= label_tag :ifsc%>
+  <%= password_field_tag :ifsc%>
+ </div>
+ <div>
+  <%= label_tag :swift_no%>
+  <%= password_field_tag :swift_no%>
+ </div>
+ 
+<%= submit_tag 'Submit', class: "btn btn-primary"%>
+<%end%>
+</div>
+</div>
+</div>

@@ -1,0 +1,11 @@
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true%>
+
+<!-- As a link -->
+<br><br><br><br>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<%= link_to "Already have an account? Login here",  sessions_new_path,  {:style=>'width:50%;', :class => "css_class"} %>
+ 
+<%= link_to "Signup Here", users_new_path %>
+   
+</nav>

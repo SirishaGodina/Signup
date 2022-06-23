@@ -3,7 +3,10 @@ class SessionsController < ApplicationController
     end
    def create
     user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
+    if(params[:email].empty? || params[:password].empty?)
+      flash[:notice] = 'Email/Password cant be blank'
+      render '/sessions/new'
+    elsif user && user.authenticate(params[:password])
      session[:user_id] = user.id
      flash[:notice] = 'Successfully Logged In!'
      

@@ -4,14 +4,12 @@
 <h2> Create Account Form-2</h2>
 <% if(@user_details!= nil) %>
 <% if @user_details.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@user_details.errors.count, "error") %> prohibited this user_detail from being saved:</h2>
-
-    <ul>
-      <% @user_details.errors.each do |error| %>
+  <div class="alert alert-warning">
+        <ul>
+        <% @user_details.errors.each do |error| %>
         <li><%= error.full_message %></li>
-      <% end %>
-    </ul>
+        <% end %>
+        </ul>
   </div>
 <% end %>
 <% end %>

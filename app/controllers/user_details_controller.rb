@@ -33,8 +33,8 @@ class UserDetailsController < ApplicationController
     end
 
     def move_to
-        user = User.find(session[:user_id])
-        if (current_user && user.user_detail.present?)
+        
+        if (current_user && current_user.user_detail.present?)
             redirect_to '/user_details/show' 
         else
             render '/user_details/details1'

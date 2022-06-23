@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get '/user_details/details2' => 'user_details#details2'
   post '/user_details/create' => 'user_details#create'
   get '/user_details/show' => 'user_details#show'
-
+  get '/user_details/move_to' => 'user_details#move_to'
 
 end

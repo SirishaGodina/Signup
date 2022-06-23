@@ -4,5 +4,5 @@ class UserDetail < ApplicationRecord
     
     validates_uniqueness_of :user_id
     
-    validates :ifsc, format: {with: /[a-zA-Z]/}
+    
 end

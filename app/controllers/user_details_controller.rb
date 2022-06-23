@@ -1,4 +1,5 @@
 class UserDetailsController < ApplicationController
+    before_action :require_login, only: [:show]
     
      def details1
        
@@ -33,7 +34,7 @@ class UserDetailsController < ApplicationController
 
     def move_to
         user = User.find(session[:user_id])
-        if (user.user_detail.present?)
+        if (current_user && user.user_detail.present?)
             redirect_to '/user_details/show' 
         else
             render '/user_details/details1'
@@ -43,4 +44,13 @@ class UserDetailsController < ApplicationController
     def show
         @userdetail = UserDetail.find(session[:user_details_id])
     end
+
+    private
+ 
+  def require_login
+    unless current_user
+      flash[:notice] = "You must be logged in to access this section"
+      redirect_to 'sessions/new'
+    end
+  end
 end

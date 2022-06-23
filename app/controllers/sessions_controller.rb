@@ -19,7 +19,8 @@ class SessionsController < ApplicationController
    end
     def destroy
      session[:user_id] = nil
-     flash[:success] = 'Successfully Logged Out!'
+     @current_user = nil
+     flash.now[:notice] = 'Successfully Logged Out!'
      render '/sessions/new'
     end
 end

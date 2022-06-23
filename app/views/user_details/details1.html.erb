@@ -5,19 +5,20 @@
 <div class="alert alert-warning">
 <%= notice%>
 </div>
+
 <%=form_tag '/user_details/details1', method: :get do%>
  
- <div>
-  <%= label_tag :first_name%>
-  <%= text_field_tag :first_name %>
+ <div class="form-group">
+  
+  <%= text_field_tag :first_name, nil, :required => true, :placeholder => 'first name' %>
  </div>
- <div>
-  <%= label_tag :last_name%>
-  <%= text_field_tag :last_name %>
+ <div class="form-group">
+ 
+  <%= text_field_tag :last_name, nil, :required => true, :placeholder => 'last name'%>
  </div>
- <div>
-  <%= label_tag :phone_no%>
-  <%= text_field_tag :phone_no%>
+ <div class="form-group">
+  
+  <%= number_field_tag :phone_no, nil, :required => false, :placeholder => 'phone no'%>
  </div>
  
 <%= submit_tag 'Next', class: "btn btn-primary"%>

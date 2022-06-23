@@ -1,16 +1,13 @@
 class UserDetailsController < ApplicationController
     
      def details1
-       if( !params[:first_name].empty? && !params[:last_name].empty?)
+       
         session[:first_name] = params[:first_name]
         session[:last_name] = params[:last_name]
         session[:phone_no] = params[:phone_no]
         
         render '/user_details/details2'
-        else
-         flash[:notice] = 'First name or Last name cant be blank'
-         render '/user_details/details1'
-       end
+        
      end
 
     

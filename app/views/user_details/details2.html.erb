@@ -15,17 +15,17 @@
 <% end %>
 <%=form_tag '/user_details/create', method: :post do%>
  
- <div>
-  <%= label_tag :bank_account_no%>
-  <%= text_field_tag :bank_account_no%>
+ <div class="form-group">
+  
+  <%= text_field_tag :bank_account_no, nil, :required => true, :placeholder => 'bank account no'%>
  </div>
- <div>
-  <%= label_tag :ifsc%>
-  <%= password_field_tag :ifsc%>
+ <div class="form-group">
+  
+  <%= text_field_tag :ifsc, nil, :required => false, :placeholder => 'ifsc'%>
  </div>
- <div>
-  <%= label_tag :swift_no%>
-  <%= password_field_tag :swift_no%>
+ <div class="form-group">
+  
+  <%= number_field_tag :swift_no, nil, :required => false, :placeholder => 'swift'%>
  </div>
  
 <%= submit_tag 'Submit', class: "btn btn-primary"%>

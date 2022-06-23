@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         )
         if @user.save
             session[:user_id] = @user.id
-            flash[:success] = "Succesfully created User!!"
+            flash[:notice] = "Succesfully created User!!"
             render '/sessions/new'
         else
             render '/users/new'
